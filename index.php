@@ -11,6 +11,7 @@
     <li><a class="active" href="##Inicio">Inicio</a></li>
     <li><a href="#Ofertas">Ofertas</a></li>
     <li><a href="#Contacto">Contacto</a></li>
+    <li><a href="#Consultas">Consultas</a></li>
     <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
   </ul>
 </body>
