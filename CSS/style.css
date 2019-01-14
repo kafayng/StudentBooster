@@ -215,3 +215,20 @@ li a:hover:not(.active) {
 @media screen and (max-width: 480px) {
   .appointment-form {
     padding: 50px 30px 70px 30px; } }
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

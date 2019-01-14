@@ -42,4 +42,12 @@
       </div><!--/tab-content-->
     </div><!--/col-9-->
   </div><!--/row-->
+</br>
+  <table>
+    <tr>
+      <th>Servicio</th>
+      <th>Calificacion</th>
+    </tr>
+        <?php ConsigueHistorial('Bryan1') ?>
+  </table>
 </body>

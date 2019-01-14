@@ -1,17 +1,11 @@
 <?php
 	function OptionCarreras(){
-		$hostname = "localhost";
-		$username = "root";
-		$password = "";
-		$databaseName = "proyecto";
-
-		$connect = mysqli_connect($hostname, $username, $password, $databaseName);
-		$connect->set_charset("utf8");
+		require('db.php');
 		if (mysqli_connect_error()){
-			die('Error de conexion('. mysqli_connect_error().')'. mysqli_connect_error());
+			die("Connection failed: " . $conn->connect_error);
 		}else{
 			$query = "SELECT * FROM carrera";
-			$result = mysqli_query($connect, $query);  
+			$result = mysqli_query($conn, $query);  
 			if($result->num_rows > 0){
 				while($row = $result->fetch_assoc()){
 					echo "<option>" .$row["Nombre"] . "<option>";
@@ -20,21 +14,16 @@
 				echo "0 results";
 			}
 		}
-		$connect->close();
+		$conn->close();
 	}
 	
 	function formPerfil($usuario){
-		$hostname = "localhost";
-		$username = "root";
-		$password = "";
-		$databaseName = "proyecto";
-		$connect = mysqli_connect($hostname, $username, $password, $databaseName);
-		$connect->set_charset("utf8");
-		if (mysqli_connect_error()){
-			die('Error de conexion('. mysqli_connect_error().')'. mysqli_connect_error());
+		require('db.php');
+		if ($conn->connect_error){
+			die("Connection failed: " . $conn->connect_error);
 		}else{
 			$query = "SELECT * from estudiante where Nombre_Usuario = '$usuario'";
-			$result = mysqli_query($connect, $query);  
+			$result = mysqli_query($conn, $query);  
 			if($result->num_rows > 0){
 				while($row = $result->fetch_assoc()){
 					echo 
@@ -92,23 +81,52 @@
 				echo "0 results";
 			}
 		}
-		$connect->close();
+		$conn->close();
+	}
+
+	function ConsigueHistorial($usuario){
+		require('db.php');
+		if ($conn->connect_error){
+			die("Connection failed: " . $conn->connect_error);
+		}else{
+			$query = "SELECT ID_Usuario FROM estudiante WHERE Nombre_Usuario = '$usuario'";
+			$result = mysqli_query($conn, $query);
+			while($row = $result->fetch_assoc()){
+				$ID_Usuario = (int)$row["ID_Usuario"];
+			}
+			$query = "SELECT Servicio.Nombre, Calificacion_Estudiante FROM trabajoxusuario
+					INNER JOIN servicio	ON Servicio_ID = Servicio.ID WHERE Estudiante_Id_Usuario = '$ID_Usuario'";
+			$result = mysqli_query($conn, $query);
+			if($result->num_rows > 0){
+				while($row = $result->fetch_assoc()){
+					if($row["Calificacion_Estudiante"] == null){
+						echo 
+							"<tr><td>" .$row["Nombre"] . "</td>
+							 <td>No hay calificación</td></tr>";
+					}else{						
+						echo 
+							"<tr><td>" .$row["Nombre"] . "</td>
+							 <td>" .$row["Calificacion_Estudiante"] . "</td></tr>";
+					}
+				}
+			}
+		}
+		$conn->close();
 	}
 ?>
 
+<!-- 
+	<tr>
+	    <td>Alfreds Futterkiste</td>
+	    <td>Maria Anders</td>
+	</tr>
+ -->
 
+<!-- 
 
-
-
-
-                     
-  
-    
-      
-  
-			                         
-              
-                  
-                  
-              
-            
+SELECT Servicio.Nombre, Calificacion_Estudiante 
+FROM trabajoxusuario
+	INNER JOIN servicio	
+    	ON Servicio_ID = Servicio.ID
+    WHERE Estudiante_Id_Usuario = 1
+ -->
