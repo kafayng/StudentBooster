@@ -1,4 +1,32 @@
 <?php
+	function LogIn($usuario, $pwd){
+		require('db.php');
+		if(mysqli_connect_error()){
+			die("Connection failed: " . $conn->connect_error);
+		}else{
+			$query = ""
+		}
+	}
+
+	function ExisteUsuario($usuario, $pwd){
+		require('db.php');
+		if(mysqli_connect_error()){
+			die("Connection failed: " . $conn->connect_error);
+		}else{
+			$query = ""
+		}
+	}
+	
+//0 = existe
+// SELECT CASE WHEN EXISTS (
+//     SELECT 1
+//     FROM estudiante
+//     WHERE Nombre_Usuario = 'Bryan1'
+// )
+// THEN 0
+// ELSE 1
+// END
+
 	function OptionCarreras(){
 		require('db.php');
 		if (mysqli_connect_error()){
