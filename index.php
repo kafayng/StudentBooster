@@ -70,7 +70,7 @@
     </a>
   </div>
 
-
+  
    <section id="about">
       <div class="row">
          <div class="three columns">
