@@ -1,9 +1,5 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html>
 
 <head>
   <title>Bootstrap Example</title>
@@ -12,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <?php include 'main.php';?>
   <ul>
@@ -20,6 +17,7 @@
     <li><a href="#Contacto">Contacto</a></li>
     <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
   </ul>
+
   <hr>
   <div class="main">
     <div class="container bootstrap snippet">
@@ -53,3 +51,4 @@
     </table>
   </div>
 </body>
+</html>
