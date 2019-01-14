@@ -22,38 +22,27 @@
   <link rel="stylesheet" href="css/style.css">
   <?php include "getOfertas.php"; ?>
 
-</head>
-<body  onload="filter(0)">
-  <ul>
-    <li><a class="active" href="##Inicio">Inicio</a></li>
-    <li><a href="#Ofertas">Ofertas</a></li>
-    <li><a href="#Contacto">Contacto</a></li>
-    <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
-  </ul>
+  </head>
+  <body  onload="filter(0)">
+    <ul>
+      <li><a class="active" href="##Inicio">Inicio</a></li>
+      <li><a href="#Ofertas">Ofertas</a></li>
+      <li><a href="#Contacto">Contacto</a></li>
+      <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
+    </ul>
 
-
-
-
-   </style> <div class="container-fluid">
-   <br>
-   <div class="dropdown">
-   <button class="btn btn-primary dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   About Us
-   </button>
-   <div class="dropdown-menu" aria-labelledby="about-us">
-   <a class="dropdown-item" onclick="filter(0)">Categoría 0</a>
-   <a class="dropdown-item" onclick="filter(1)">Categoría 1</a>
-   <a class="dropdown-item" onclick="filter(2)">Categoría 2</a>
-   <a class="dropdown-item" onclick="filter(3)">Categoría 3</a>
-   </div>
-   </div>
-
-   </div>
-   <br> 
-   <div id="ofertas">
-   </div>
- </div> 
-</body>
+    <div class="container-fluid">
+      <div class="row" style="margin-top: 20px;">
+        <div class="col"></div>
+        <button class="btn btn-primary dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtrar por Categoría</button>
+        <div class="dropdown-menu" aria-labelledby="about-us">
+          <?php getDropdown() ?>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div id="ofertas"></div>
+  </body>
 
 <!-- Initialize Bootstrap functionality -->
 <script>
@@ -74,9 +63,6 @@ function filter(num){
                       document.getElementById("ofertas").innerHTML = output;
                   }
 });
-// 	$.get("/getOfertas.php?categoria="+num).done(function(data){
-// 		document.getElementById("ofertas").innerHTML = num;
-// });
 
 }
 
