@@ -1,9 +1,12 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <title>Consultas</title>
     <style>
       .error {color: #FF0000;}
     </style>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
 
@@ -70,6 +73,15 @@
       }
     ?>
 
+    <ul>
+      <li><a class="active" onclick="location.href='index.php'">Inicio</a></li>
+      <li><a href="#" onclick="location.href='ofertas.php'">Ofertas</a></li>
+      <li><a href="#" onclick="location.href='Consultas.php'">Consultas</a></li>
+      <li><a href="#" onclick="location.href='Perfil.php'">Perfil</a></li>
+      <li style="float:right"><a href="#" onclick="document.getElementById('LoginForm').style.display='block'" style="width:auto;">Iniciar Sesión</a></li>
+    </ul>
+
+    <div class="container">
     <p><span class="error">* Espacio requerido</span></p>
 
     <h2>Añadir Consulta</h2>

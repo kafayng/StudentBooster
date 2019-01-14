@@ -18,17 +18,18 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Booster</title>
+  <title>Ofertas</title>
   <link rel="stylesheet" href="css/style.css">
   <?php include "getOfertas.php"; ?>
 
   </head>
   <body  onload="filter(0)">
     <ul>
-      <li><a class="active" href="##Inicio">Inicio</a></li>
-      <li><a href="#Ofertas">Ofertas</a></li>
-      <li><a href="#Contacto">Contacto</a></li>
-      <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
+      <li><a class="active" onclick="location.href='index.php'">Inicio</a></li>
+      <li><a href="#" onclick="location.href='ofertas.php'">Ofertas</a></li>
+      <li><a href="#" onclick="location.href='Consultas.php'">Consultas</a></li>
+      <li><a href="#" onclick="location.href='Perfil.php'">Perfil</a></li>
+      <li style="float:right"><a href="#" onclick="document.getElementById('LoginForm').style.display='block'" style="width:auto;">Iniciar Sesión</a></li>
     </ul>
 
     <div class="container-fluid">

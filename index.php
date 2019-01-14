@@ -97,7 +97,7 @@
                         <img alt="" src="images/icon1.png">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
-                          <h5>Ciclismo</h5>
+                          <h5>Colaboración</h5>
                        </div>
                         </div>
                   </div>
@@ -108,7 +108,7 @@
                      <img alt="" src="images/icon2.png">
                      <div class="overlay">
                         <div class="portfolio-item-meta">
-                      <h5>Voluntariado</h5>
+                      <h5>Crecimiento personal</h5>
                    </div>
                      </div>
                   </div>
@@ -119,7 +119,7 @@
                         <img alt="" src="images/icon3.png">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
-                          <h5>Caminar</h5>
+                          <h5>Plataforma escalable</h5>
                        </div>
                         </div>
                   </div>
@@ -130,7 +130,7 @@
                      <img alt="" src="images/icon4.png">
                      <div class="overlay">
                         <div class="portfolio-item-meta">
-                      <h5>Ver gente</h5>
+                      <h5>Maximizar recursos</h5>
                    </div>
                      </div>
                   </div>
