@@ -4,24 +4,34 @@
 		if(mysqli_connect_error()){
 			die("Connection failed: " . $conn->connect_error);
 		}else{
-			$query = ""
+			$result = ExisteUsuario($usuario, $pwd);
+			if($result == 0){
+				
+			}else{
+
+			}
 		}
 	}
 
 	function ExisteUsuario($usuario, $pwd){
 		require('db.php');
+		$result = 1;
 		if(mysqli_connect_error()){
 			die("Connection failed: " . $conn->connect_error);
+			return $result;
 		}else{
-			$query = ""
+			$query = "SELECT CASE WHEN EXISTS(SELECT 1 FROM estudiante) WHERE Nombre_Usuario = '$usuario' AND Contraseña = '$pwd')
+			THEN 0 ELSE 1 END";
+			$result = mysqli_query($conn, $query);
+			return $result;
 		}
 	}
-	
+
 //0 = existe
 // SELECT CASE WHEN EXISTS (
 //     SELECT 1
 //     FROM estudiante
-//     WHERE Nombre_Usuario = 'Bryan1'
+//     WHERE Nombre_Usuario = 'Bryan1' AND Contraseña = 123
 // )
 // THEN 0
 // ELSE 1
@@ -141,20 +151,41 @@
 		}
 		$conn->close();
 	}
+
+	if(isset($_POST['submit'])){
+		require('db.php');
+	if ($conn->connect_error){
+		die("Connection failed: " . $conn->connect_error);
+	}else{
+    	$nombre = filter_input(INPUT_POST, 'Nombre');
+		$usuario = filter_input(INPUT_POST, 'Usuario');
+		$carnet = filter_input(INPUT_POST, 'Carnet');
+		$telefono = filter_input(INPUT_POST, 'Numero');
+		$email = filter_input(INPUT_POST, 'Email');
+		$descripcion = filter_input(INPUT_POST, 'Descripcion');
+		$pwd = filter_input(INPUT_POST, 'Contraseña');
+		$carrera = filter_input(INPUT_POST, 'Carrera');
+
+		$query = "SELECT ID, Nombre from carrera";
+		$result = mysqli_query($conn, $query);
+		$IDcarrera = 1;
+		if (mysqli_num_rows($result) > 0) {
+		    while($row = $result->fetch_assoc()) {
+		    	if($row['Nombre']==$carrera){
+		    		$IDcarrera = (int)$row["ID"];	
+		    	}
+	    	}
+		}else {
+		    echo "0 resultados";
+		}
+		$insertQuery = "INSERT INTO estudiante(Carrera_ID, Nombre, Nombre_Usuario, Carnet, Telefono, Email, Descripcion, Contraseña) 
+			VALUES('$IDcarrera', '$nombre', '$usuario', '$carnet', '$telefono', '$email', '$descripcion', '$pwd')";
+		if(mysqli_query($conn, $insertQuery)){
+    		echo "Se agregó el estudiante";
+    	}else{
+    		echo "Error" .mysqli_error($conn);
+    	}
+    	$conn->close();
+	}
+}
 ?>
-
-<!-- 
-	<tr>
-	    <td>Alfreds Futterkiste</td>
-	    <td>Maria Anders</td>
-	</tr>
- -->
-
-<!-- 
-
-SELECT Servicio.Nombre, Calificacion_Estudiante 
-FROM trabajoxusuario
-	INNER JOIN servicio	
-    	ON Servicio_ID = Servicio.ID
-    WHERE Estudiante_Id_Usuario = 1
- -->

@@ -36,7 +36,7 @@
           <div class="tab-content">
             <hr>
               <form class="form" action="##" method="post" id="registrationForm">   
-                <?php formPerfil('Bryan1') ?>
+                <?php formPerfil('Manuel2') ?>
               </form>              
             <hr> 
           </div><!--/tab-pane-->
@@ -49,7 +49,7 @@
         <th>Servicio</th>
         <th>Calificacion</th>
       </tr>
-          <?php ConsigueHistorial('Bryan1') ?>
+          <?php ConsigueHistorial('Manuel2') ?>
     </table>
   </div>
 </body>

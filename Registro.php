@@ -17,7 +17,7 @@
     </ul>
 	<div class="main">
         <div class="container">
-            <form action="insert.php" method="POST" class="form-Registro">
+            <form action="main.php" method="POST" class="form-Registro">
                 <h2>Formulario de registro</h2>
                 <div class="form-group-1">
                     <label class="label-Registro" for="Nombre">Nombre completo:</label>
