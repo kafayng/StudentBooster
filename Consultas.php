@@ -86,14 +86,14 @@
 
     <h2>Añadir Consulta</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      ID de Usuario: <input type="text" name="name" value="<?php echo $name;?>">
-      <span class="error">* <?php echo $nameErr;?></span>
+      ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
+      <input type="text" name="name" value="<?php echo $name;?>">
       <br><br>
-      ID de Servicio: <input type="text" name="email" value="<?php echo $email;?>">
-      <span class="error">* <?php echo $emailErr;?></span>
+      ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
+      <input type="text" name="email" value="<?php echo $email;?>">
       <br><br>
-      Comentario: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-      <span class="error">* <?php echo $commentErr;?></span>
+      Comentario: <span class="error">* <?php echo $commentErr;?></span>
+       <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
       <br><br>
       <input type="submit" name="submit" value="Enviar">
     </form>
