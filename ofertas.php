@@ -36,10 +36,7 @@
         <div class="col"></div>
         <button class="btn btn-primary dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtrar por Categoría</button>
         <div class="dropdown-menu" aria-labelledby="about-us">
-          <a class="dropdown-item" onclick="filter(0)">Categoría 0</a>
-          <a class="dropdown-item" onclick="filter(1)">Categoría 1</a>
-          <a class="dropdown-item" onclick="filter(2)">Categoría 2</a>
-          <a class="dropdown-item" onclick="filter(3)">Categoría 3</a>
+          <?php getDropdown() ?>
         </div>
         <div class="col"></div>
       </div>

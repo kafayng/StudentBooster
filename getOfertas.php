@@ -1,12 +1,15 @@
 <?php
 
-  function init(){
+  function init($categoria){
   require('db.php');
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-
   $sql = "SELECT Nombre, Tiempo, Costo, Empresa, Descripcion FROM Servicio";
+  if ($categoria != '0') {
+    $sql .= " WHERE ID_Categoria = ".$categoria;
+  }
+  
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -40,14 +43,33 @@
     echo $str;
 }
 
-function filter($cat) {
 
-	echo ('0' === $cat) ? init() : "filter cat ".$cat;
-	
-  }
+
+function getDropdown(){
+  $resHTML = "<a class=\"dropdown-item\" onclick=\"filter(0)\">Todo</a>";
+
+    require('db.php');
+    if (mysqli_connect_error()){
+      die("Connection failed: " . $conn->connect_error);
+    }else{
+      $query = "SELECT * FROM carrera";
+      $result = mysqli_query($conn, $query);  
+      if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
+          $resHTML .= "<a class=\"dropdown-item\" onclick=\"filter(".$row["ID"].")\">".$row["Nombre"]."</a>";
+        }
+      }else{
+        echo "0 results";
+      }
+    }
+    $conn->close();
+    echo $resHTML;
+}
 
 
 if (isset($_GET['categoria'])) {
-  filter($_GET['categoria']);
+  init($_GET['categoria']);
 }
+
+
 ?> 
