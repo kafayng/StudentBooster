@@ -32,6 +32,11 @@ li a:hover:not(.active) {
   padding: 60px 0;
   position: relative; }
 
+.main-registro {
+  background-image: url("../Images/body-bg.jpg");
+  padding: 60px 0;
+  position: relative; }
+
 .container {
   width: 586px;
   background: #fff;
@@ -126,11 +131,11 @@ li a:hover:not(.active) {
   margin: 0px;
   margin-bottom: 35px; }
 
-.body {
+.body-Registro {
   font-size: 13px;
   line-height: 1.8;
   color: #fff;
-  background-color: #000000;
+  
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;

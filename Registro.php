@@ -9,8 +9,7 @@
 </head>
 <body>
     <?php include 'main.php';?>
-  <?php include 'Navigation.php';?>
-    
+    <?php include 'Navigation.php';?>
 	<div class="main">
         <div class="container">
             <form action="main.php" method="POST" class="form-Registro">
