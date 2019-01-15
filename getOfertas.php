@@ -24,8 +24,6 @@
      	$str .= "           <p class=\"card-text\">". $row["Descripcion"].".</p>";
      	$str .= "           <div class=\"card-footer\">";
      	$str .= "               <div class=\"row\">";
-     	$str .= "                   <div class=\"col\">Tiempo:". $row["Tiempo"]."</div>";
-     	$str .= "                   <div class=\"col\">Costo:". $row["Costo"]."</div>";
      	$str .= "                   <div class=\"col\">Fecha: ". $row["Tiempo"]."</div>";
      	$str .= "                   <div class=\"col\">Costo: $". $row["Costo"]."</div>";
      	$str .= "                   <div class=\"col\">Empresa:". $row["Empresa"]."</div>";
