@@ -32,15 +32,16 @@
 
         <div class="col-sm-9">     
           <div class="tab-content">
-            <hr>
+            
               <form class="form" action="##" method="post" id="registrationForm">   
                 <?php formPerfil('MMurillo') ?>
               </form>              
-            <hr> 
           </div><!--/tab-pane-->
         </div><!--/tab-content-->
       </div><!--/col-9-->
+      <hr>
     </div><!--/row-->
+
   </br>
   <h1 align="center">Servicios realizados</h1><br>
   <div class="container">
