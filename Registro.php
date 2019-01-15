@@ -15,7 +15,7 @@
         <li><a href="#Consultas">Consultas</a></li>
         <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
     </ul>
-	<div class="main">
+	<div class="main-registro">
         <div class="container">
             <form action="main.php" method="POST" class="form-Registro">
                 <h2>Formulario de registro</h2>
