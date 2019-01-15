@@ -8,15 +8,15 @@
   <link rel="shortcut icon" href="Images/logo.png" >
   <link rel="stylesheet" href="CSS/style.css">
   <?php include "imports.php" ?>
+  <?php include 'main.php';?>
+
 
 </head>
 
 <body>
-  <?php include 'main.php';?>
   <?php include 'Navigation.php';?>
 
 
-  <hr>
   <div class="main">
     <h1 align="center">Mi Perfil</h1>
     <div class="container bootstrap snippet">
