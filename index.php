@@ -119,7 +119,7 @@
                  <img alt="" src="Images/slide4.png">
                  <div class="overlay">
                     <div class="portfolio-item-meta">
-                       <h4>Colaboración y Reputación</h4>
+                       <h4>Reputación</h4>
                     </div>
                  </div>
               </div>
@@ -130,20 +130,20 @@
 
       <div class="row">
         <div class="col-sm-3" align="center">
-          <h3>Column 1</h3>
-          <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <h3>Conecta con otros</h3>
+          <p>Puedes conectarte con otros desarrolladores y empresarios de todo el mundo.</p>
         </div>
         <div class="col-sm-3" align="center">
-          <h3>Column 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <h3>Potencia tu carrera</h3>
+          <p>Puedes ganar experiencia elaborando proyectos reales con empresas reales.</p>
         </div>
         <div class="col-sm-3" align="center">
-          <h3 align="center">Column 3</h3>        
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <h3 align="center">Menores gastos</h3>        
+          <p>No tienes que desplazarte ni pagar servicios extra por lo que ahorras dinero.</p>
         </div>
         <div class="col-sm-3" align="center">
-          <h3>Column 3</h3>        
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <h3>Mantiene la calidad</h3>        
+          <p>Un sistema de reputación impulsa especificaciones y desarrollos de calidad.</p>
         </div>
       </div>
    </section> 
