@@ -5,19 +5,15 @@
   <title>Perfil</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <?php include "imports.php" ?>
+
 </head>
 
 <body>
   <?php include 'main.php';?>
-   <ul>
-      <li><a class="active" onclick="location.href='index.php'">Inicio</a></li>
-      <li><a href="#" onclick="location.href='ofertas.php'">Ofertas</a></li>
-      <li><a href="#" onclick="location.href='Consultas.php'">Consultas</a></li>
-      <li><a href="#" onclick="location.href='Perfil.php'">Perfil</a></li>
-      <li style="float:right"><a href="#" onclick="document.getElementById('LoginForm').style.display='block'" style="width:auto;">Iniciar Sesión</a></li>
-    </ul>
+  <?php include 'Navigation.php';?>
+
 
   <hr>
   <div class="main">
@@ -35,7 +31,7 @@
           <div class="tab-content">
             <hr>
               <form class="form" action="##" method="post" id="registrationForm">   
-                <?php formPerfil('Manuel2') ?>
+                <?php formPerfil('MMurillo') ?>
               </form>              
             <hr> 
           </div><!--/tab-pane-->
@@ -48,7 +44,7 @@
         <th>Servicio</th>
         <th>Calificacion</th>
       </tr>
-          <?php ConsigueHistorial('Manuel2') ?>
+          <?php ConsigueHistorial('MMurillo') ?>
     </table>
   </div>
 </body>

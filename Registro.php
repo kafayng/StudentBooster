@@ -8,13 +8,8 @@
 </head>
 <body>
     <?php include 'main.php';?>
-    <ul>
-        <li><a href="index.php">Inicio</a></li>
-        <li><a href="#Ofertas">Ofertas</a></li>
-        <li><a href="#Contacto">Contacto</a></li>
-        <li><a href="#Consultas">Consultas</a></li>
-        <li id="Perfil" style="float:right"><a href="#IniciarSesion">Iniciar Sesión</a></li>
-    </ul>
+  <?php include 'Navigation.php';?>
+    
 	<div class="main">
         <div class="container">
             <form action="main.php" method="POST" class="form-Registro">

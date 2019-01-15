@@ -25,7 +25,6 @@
             $nameErr = "Solo numeros son permitidos";
           }
         }
-
         if (empty($_POST["email"])) {
           $emailErr = "ID de Servicio es requerido";
         } else {
