@@ -54,12 +54,12 @@
 
     <?php include "Navigation.php" ?>
 
-    <div class="container">
-    <p><span class="error">* Espacio requerido</span></p>
+    <div class="container">    
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <div class="card">
         <div class="card-header"> <h2>Cuéntanos cómo podemos ayudarte</h2></div>
         <div class="card-body">
+          <p><span class="error">* Espacio requerido</span></p>
           ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
           <input type="text" name="name" value="<?php echo $name;?>">
           <br><br>
