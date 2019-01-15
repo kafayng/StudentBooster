@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>   
-   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Student Booster</title>
-  <link rel="shortcut icon" href="images/logo.png" >
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/style.css">
-  <link rel="stylesheet" href="CSS/default.css">
-  <link rel="stylesheet" href="CSS/layout.css">
+
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Francisco Monge Zúñiga</title>
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="CSS/style.css">
+   <link rel="stylesheet" href="CSS/default.css">
+	<link rel="stylesheet" href="CSS/layout.css">
+   <link rel="stylesheet" href="CSS/magnific-popup.css">
+
+
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/fmlogo.jpg" >
+
 </head>
 
 <body>
-  <ul  id="nav">
+
+<ul  id="nav">
     <li><a class="active">Inicio</a></li>
     <li><a href="#" onclick="location.href='ofertas.php'">Ofertas</a></li>
     <li><a href="#" onclick="location.href='Consultas.php'">Consultas</a></li>
@@ -42,8 +59,7 @@
   </div>  
 
 
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
@@ -70,93 +86,113 @@
     </a>
   </div>
 
-  
+
+   <!-- About Section
+   ================================================== -->
    <section id="about">
       <div class="row">
-         <div class="three columns">
-            <img class="profile-pic" src="Images/logo1.png" alt=""/>
-         </div>
-         <div class="nine columns main-col">
-            <h2>Cómo funciona StudentBooster</h2>
-            <p>StudentBooster es una plataforma web que permite que estudiantes de diferentes carreras universitarias puedan ejecutar una serie de trabajos cortos con el fin de potenciar sus carreras. Para ello, cada uno de los estudiantes encontrará una serie de ofertas que fueron especificadas por diferentes empresas, con características propias de cada necesidad. Cada una de las ofertas se acompaña de un tiempo de entrega y una ganancia para el estudiantes, permitiéndole así elegir las que más le convengan. El estudiante puede ejecutar el trabajo en la forma que desee, siempre y cuando cumpla con las especificaciones da cada proyecto. Una vez que cada servicio ha sido desarrollado y validado, se procederá a pagar lo correspondiente. El estudiante no solamente genera dinero, sino que también obtiene experiencia con proyectos reales, teniendo así un mejor curriculum sin necesidad de dejar la universidad.</p>
-         </div>
-      </div>
-   </section> 
 
-  <section id="portfolio">
+         <div class="three columns">
+            <img class="profile-pic" src="images/profilepic.jpg" alt=""/>
+         </div>
+
+         <div class="nine columns main-col">
+            <h2>Un poco de información sobre mí</h2>
+            <p>Mi nombre es Francisco Javier Monge Zúñiga. Nací en Cartago, lugar en el que he vivido hasta la actualidad.
+            Heredé el nombre de mi padre, Francisco Monge Navarro y los apellidos de mi madre Luz Zúñiga Zúñiga.
+            Soy el famoso "hijo del medio", pues tengo dos hermanas. Una mayor, Dayana y una menor, Leslie.
+            Y si no nos conocemos en persona, te doy una idea: mido 1.70 cm, ojos y cabello de color negro, piel morena.</p>
+         </div> <!-- end .main-col -->
+
+      </div>
+   </section> <!-- About Section End-->
+
+
+  
+
+   <!-- Portfolio Section
+   ================================================== -->
+   <section id="portfolio">
       <div class="row">
          <div class="twelve columns collapsed">
 
-            <h1>¿Porqué elegir StudentBooster?</h1>
+            <h1>Algunas de las cosas que me gusta hacer</h1>
 
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
 
-               <div class="columns portfolio-item">
+          	   <div class="columns portfolio-item">
                   <div class="item-wrap">
-                        <img alt="" src="images/icon1.png" align="center">
+                        <img alt="" src="images/ciclismo.jpg">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
-                          <h5>Colaboración</h5>
-                       </div>
+          					      <h5>Ciclismo</h5>
+          					   </div>
                         </div>
                   </div>
-               </div> <!-- item end -->
+          		</div> <!-- item end -->
 
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-                     <img alt="" src="images/icon2.png">
+                     <img alt="" src="images/voluntario.jpg">
                      <div class="overlay">
                         <div class="portfolio-item-meta">
-                      <h5>Crecimiento personal</h5>
-                   </div>
+       					      <h5>Voluntariado</h5>
+       					   </div>
                      </div>
                   </div>
-              </div> <!-- item end -->
+          		</div> <!-- item end -->
 
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-                        <img alt="" src="images/icon3.png">
+                        <img alt="" src="images/caminar.jpg">
                         <div class="overlay">
                            <div class="portfolio-item-meta">
-                          <h5>Plataforma escalable</h5>
-                       </div>
+          					      <h5>Caminar</h5>
+          					   </div>
                         </div>
                   </div>
-              </div> <!-- item end -->
+          		</div> <!-- item end -->
 
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-                     <img alt="" src="images/icon4.png">
+                     <img alt="" src="images/mall.jpg">
                      <div class="overlay">
                         <div class="portfolio-item-meta">
-                      <h5>Maximizar recursos</h5>
-                   </div>
+       					      <h5>Ver gente</h5>
+       					   </div>
                      </div>
                   </div>
-              </div> <!-- item end -->
+          		</div> <!-- item end -->
 
             </div> <!-- portfolio-wrapper end -->
          </div> <!-- twelve columns end -->
    </section> <!-- Portfolio Section End-->
+
 
    <!-- footer
    ================================================== -->
    <footer id="footer">
       <div class="row">
          <div class="twelve columns">
-            <h3>Síguenos en redes sociales</h3>
+            <h3>Sígueme en redes sociales</h3>
             <ul class="social-links">
                <li><a href="https://www.facebook.com/FranMongeZuniga/"><i class="fa fa-facebook"></i></a></li>              
                <li><a href="https://www.instagram.com/francisco_monge_zuniga/"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/francisco-monge-zuniga/"><i class="fa fa-linkedin"></i></a></li>
             </ul>
          </div>
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#nav"><i class="icon-up-open"></i></a></div>
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
       </div>
    </footer> <!-- Footer End-->
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <!-- Java Script
+   ================================================== -->
+   <script window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
 
 </body>
+
 </html>

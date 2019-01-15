@@ -5,6 +5,7 @@
     <style>
       .error {color: #FF0000;}
     </style>
+    <link rel="shortcut icon" href="images/logo.png" >
     <link rel="stylesheet" href="CSS/style.css">
     <?php include "imports.php" ?>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -54,22 +55,14 @@
       }
 
       function insertData($usuario, $servicio, $consulta){
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "proyecto";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        require('db.php');
+        if ($conn->connect_error){
+          die("Connection failed: " . $conn->connect_error);
+        }else{
+          $sql = "Insert into `consultas`(`Fk_Usuario`, `Fk_Servicio`, `Consulta`) VALUES ('$usuario', '$servicio', '$consulta')";   
+          $result = $conn->query($sql);
+          $conn->close();
         }
-
-        $sql = "Insert into `consulta`(`Fk_Usuario`, `Fk_Servicio`, `Consulta`) VALUES ('$usuario', '$servicio', '$consulta')";   
-        $result = $conn->query($sql);
-        $conn->close();
       }
     ?>
 
@@ -78,7 +71,7 @@
     <div class="container">
     <p><span class="error">* Espacio requerido</span></p>
 
-    <h2>Añadir Consulta</h2>
+    <h2>Cuéntanos cómo podemos ayudarte</h2><br>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
       <input type="text" name="name" value="<?php echo $name;?>">
