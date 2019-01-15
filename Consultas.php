@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>Consultas</title>
-    <style>
-      .error {color: #FF0000;}
-    </style>
+    <style>.error {color: #FF0000;}</style>
+    <link rel="shortcut icon" href="Images/logo.png" >
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <?php include "imports.php" ?>
+    <?php include "main.php" ?>
   </head>
-  <body>
 
+  <body>
     <?php
       // define variables and set to empty values    
       $name = $email = $comment = "";
@@ -25,7 +25,6 @@
             $nameErr = "Solo numeros son permitidos";
           }
         }
-
         if (empty($_POST["email"])) {
           $emailErr = "ID de Servicio es requerido";
         } else {
@@ -35,7 +34,6 @@
             $emailErr = "Solo numeros son permitidos";
           }
         }
-
         if (empty($_POST["comment"])) {
           $commentErr = "Comentario es requerido";
         } else {
@@ -43,7 +41,7 @@
         }
 
         //Insert into Data Base
-        insertData($name, $email, $comment);
+        insertarConsulta($name, $email, $comment);    
       }
 
       function test_input($data) {
@@ -51,52 +49,33 @@
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-      }
-
-      function insertData($usuario, $servicio, $consulta){
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "proyecto";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "Insert into `consulta`(`Fk_Usuario`, `Fk_Servicio`, `Consulta`) VALUES ('$usuario', '$servicio', '$consulta')";   
-        $result = $conn->query($sql);
-        $conn->close();
-      }
+      }      
     ?>
 
-    <ul>
-      <li><a class="active" onclick="location.href='index.php'">Inicio</a></li>
-      <li><a href="#" onclick="location.href='ofertas.php'">Ofertas</a></li>
-      <li><a href="#" onclick="location.href='Consultas.php'">Consultas</a></li>
-      <li><a href="#" onclick="location.href='Perfil.php'">Perfil</a></li>
-      <li style="float:right"><a href="#" onclick="document.getElementById('LoginForm').style.display='block'" style="width:auto;">Iniciar Sesión</a></li>
-    </ul>
+    <?php include "Navigation.php" ?>
 
     <div class="container">
     <p><span class="error">* Espacio requerido</span></p>
-
-    <h2>Añadir Consulta</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      ID de Usuario: <input type="text" name="name" value="<?php echo $name;?>">
-      <span class="error">* <?php echo $nameErr;?></span>
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <div class="card">
+        <div class="card-header"> <h2>Cuéntanos cómo podemos ayudarte</h2></div>
+        <div class="card-body">
+        ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
+        <input type="text" name="name" value="<?php echo $name;?>">
+        <br><br>
+        ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
+        <input type="text" name="email" value="<?php echo $email;?>">
+        <br><br>     
+        Comentario: <span class="error">* <?php echo $commentErr;?></span>
+        <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
+        <br><br> </div> 
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
+        </div>
+      </div>
+      </form>
       <br><br>
-      ID de Servicio: <input type="text" name="email" value="<?php echo $email;?>">
-      <span class="error">* <?php echo $emailErr;?></span>
-      <br><br>
-      Comentario: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-      <span class="error">* <?php echo $commentErr;?></span>
-      <br><br>
-      <input type="submit" name="submit" value="Enviar">
-    </form>
+    </div>
 
   </body>
 </html>

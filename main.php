@@ -189,5 +189,19 @@
     	}
     	$conn->close();
 	}
-}
+	}
+
+
+	function insertarConsulta($usuario, $servicio, $consulta){
+        require('db.php');
+        if ($conn->connect_error){
+          die("Connection failed: " . $conn->connect_error);
+        }else{
+          $sql = "Insert into `consultas`(`Fk_Usuario`, `Fk_Servicio`, `Consulta`) VALUES ('$usuario', '$servicio', '$consulta')";   
+          $result = $conn->query($sql);
+          $conn->close();
+          header("Location: index.php"); /* Redirect browser */
+  		  exit();
+        }
+     }
 ?>
