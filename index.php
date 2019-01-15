@@ -47,15 +47,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="Images/carousel1.jpg" style="width:100%;">
+        <img src="Images/rusel1.png" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="Images/carousel2.jpg" style="width:100%;">
+        <img src="Images/rusel2.png" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="Images/carousel3.jpg" style="width:100%;">
+        <img src="Images/rusel3.png" style="width:100%;">
       </div>
     </div>
 
@@ -127,7 +127,7 @@
 
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-                     <img alt="" src="images/icon4.png">
+                     <img alt="" src="images/icon5.png">
                      <div class="overlay">
                         <div class="portfolio-item-meta">
                       <h5>Maximizar recursos</h5>

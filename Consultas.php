@@ -10,6 +10,7 @@
     <?php include "imports.php" ?>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   </head>
+
   <body>
 
     <?php
@@ -78,12 +79,13 @@
       <br><br>
       ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
       <input type="text" name="email" value="<?php echo $email;?>">
-      <br><br>
+      <br><br>     
       Comentario: <span class="error">* <?php echo $commentErr;?></span>
-       <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-      <br><br>
-      <input type="submit" name="submit" value="Enviar">
+      <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
+      <br><br>      
+      <button type="submit" class="btn btn-primary btn-block">Enviar</button>
     </form>
+    <br><br> 
 
   </body>
 </html>
