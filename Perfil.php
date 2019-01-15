@@ -47,7 +47,7 @@
     <table>
       <tra>
         <th>Servicio</th>
-        <th>Calificacion</th>
+        <th>Calificación</th>
       </tr>
           <?php ConsigueHistorial('MMurillo') ?>
     </table>

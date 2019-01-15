@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-
 <?php include "imports.php" ?>
 
   <meta charset="UTF-8">
@@ -17,7 +14,7 @@
   <body  onload="filter(0)">
     <?php include "Navigation.php"; ?>
 
-
+    <br><h1 align="center">Oferta de Servicios Disponibles</h1><br>
     <div class="container-fluid">
       <div class="row" style="margin-top: 20px;">
         <div class="col"></div>
@@ -29,6 +26,7 @@
       </div>
     </div>
     <div id="ofertas"></div>
+    <br><br>
   </body>
 
 <!-- Initialize Bootstrap functionality -->
