@@ -4,9 +4,8 @@
    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Student Booster</title>
-  <link rel="shortcut icon" href="images/logo.png" >
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
+  <link rel="shortcut icon" href="images/logo.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="CSS/default.css">
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/layout.css">
@@ -15,7 +14,7 @@
 
 <body>
   <ul  id="nav">
-    <li><a class="active">Inicio</a></li>
+    <li><a href="#" onclick="location.href='index.php'">Inicio</a></li>
     <li><a href="#" onclick="location.href='ofertas.php'">Ofertas</a></li>
     <li><a href="#" onclick="location.href='Consultas.php'">Consultas</a></li>
     <li><a href="#" onclick="location.href='Perfil.php'">Perfil</a></li>
@@ -83,72 +82,102 @@
    </section> 
 
   <section id="portfolio">
+    <div class="row">
+     <div class="twelve columns collapsed">
+        <h1 style="color:black">¿Porqué elegir StudentBooster?</h1>
+        <!-- portfolio-wrapper -->
+          <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                  <img alt="" src="Images/slide1.png" align="center">
+                  <div class="overlay">
+                    <div class="portfolio-item-meta">
+                      <h4>Colaboración</h4>
+                    </div>
+                  </div>
+              </div>
+            </div> 
+
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                <img alt="" src="Images/slide2.png">
+                <div class="overlay">
+                  <div class="portfolio-item-meta">
+                    <h4>Crecimiento personal</h4>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                <img alt="" src="Images/slide3.png">
+                <div class="overlay">
+                  <div class="portfolio-item-meta">
+                    <h4>Maximizar recursos</h4>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                 <img alt="" src="Images/slide4.png">
+                 <div class="overlay">
+                    <div class="portfolio-item-meta">
+                       <h4>Colaboración y Reputación</h4>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+
       <div class="row">
-         <div class="twelve columns collapsed">
+        <div class="col-sm-3" align="center">
+          <h3>Column 1</h3>
+          <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        </div>
+        <div class="col-sm-3" align="center">
+          <h3>Column 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        </div>
+        <div class="col-sm-3" align="center">
+          <h3 align="center">Column 3</h3>        
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        </div>
+        <div class="col-sm-3" align="center">
+          <h3>Column 3</h3>        
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        </div>
+      </div>
+   </section> 
 
-            <h1>¿Porqué elegir StudentBooster?</h1>
 
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
 
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-                        <img alt="" src="images/icon1.png" align="center">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-                          <h5>Colaboración</h5>
-                       </div>
-                        </div>
-                  </div>
-               </div> <!-- item end -->
+   <div class="row">
+    <br>
+    <h2 align="center" style="background-color:white">El proceso es muy sencillo</h1>
+    <img alt="" src="Images/process.png" id="process">
+    <br><br><br><br>
+   </div>
 
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-                     <img alt="" src="images/icon2.png">
-                     <div class="overlay">
-                        <div class="portfolio-item-meta">
-                      <h5>Crecimiento personal</h5>
-                   </div>
-                     </div>
-                  </div>
-              </div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-                        <img alt="" src="images/icon3.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-                          <h5>Plataforma escalable</h5>
-                       </div>
-                        </div>
-                  </div>
-              </div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-                     <img alt="" src="images/icon5.png">
-                     <div class="overlay">
-                        <div class="portfolio-item-meta">
-                      <h5>Maximizar recursos</h5>
-                   </div>
-                     </div>
-                  </div>
-              </div> <!-- item end -->
-
-            </div> <!-- portfolio-wrapper end -->
-         </div> <!-- twelve columns end -->
-   </section> <!-- Portfolio Section End-->
-
-   <!-- footer
-   ================================================== -->
    <footer id="footer">
       <div class="row">
          <div class="twelve columns">
-            <h3>Síguenos en redes sociales</h3>
-            <ul class="social-links">
-               <li><a href="https://www.facebook.com/FranMongeZuniga/"><i class="fa fa-facebook"></i></a></li>              
-               <li><a href="https://www.instagram.com/francisco_monge_zuniga/"><i class="fa fa-instagram"></i></a></li>
-            </ul>
+            <br>
+            <h3 style="color:DodgerBlue">Síguenos en redes sociales</h3>
+            <div style="background-color:DodgerBlue" class="container">
+              <ul class="social-links">
+                 <li style="background-color:DodgerBlue"><a href="https://www.facebook.com" class="fa fa-facebook"></a></li>
+                 <li style="background-color:DodgerBlue"><a href="https://www.instagram.com" class="fa fa-instagram"></a></li>
+                 <li style="background-color:DodgerBlue"><a href="https://www.twitter.com" class="fa fa-twitter"></a></li>
+                 <li style="background-color:DodgerBlue"><a href="https://www.linkedin.com" class="fa fa-linkedin"></a></li>
+                 <li style="background-color:DodgerBlue"><a href="https://www.youtube.com" class="fa fa-youtube"></a></li>
+                 <li style="background-color:DodgerBlue"><a href="https://www.google.com" class="fa fa-plus"></a></li>
+              </ul>
+            </div>
          </div>
          <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#nav"><i class="icon-up-open"></i></a></div>
       </div>

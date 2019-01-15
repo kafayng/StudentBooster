@@ -2,17 +2,14 @@
 <html>
   <head>
     <title>Consultas</title>
-    <style>
-      .error {color: #FF0000;}
-    </style>
-    <link rel="shortcut icon" href="images/logo.png" >
+    <style>.error {color: #FF0000;}</style>
+    <link rel="shortcut icon" href="Images/logo.png" >
     <link rel="stylesheet" href="CSS/style.css">
     <?php include "imports.php" ?>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <?php include "main.php" ?>
   </head>
 
   <body>
-
     <?php
       // define variables and set to empty values    
       $name = $email = $comment = "";
@@ -37,7 +34,6 @@
             $emailErr = "Solo numeros son permitidos";
           }
         }
-
         if (empty($_POST["comment"])) {
           $commentErr = "Comentario es requerido";
         } else {
@@ -45,7 +41,7 @@
         }
 
         //Insert into Data Base
-        insertData($name, $email, $comment);
+        insertarConsulta($name, $email, $comment);    
       }
 
       function test_input($data) {
@@ -53,18 +49,7 @@
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-      }
-
-      function insertData($usuario, $servicio, $consulta){
-        require('db.php');
-        if ($conn->connect_error){
-          die("Connection failed: " . $conn->connect_error);
-        }else{
-          $sql = "Insert into `consultas`(`Fk_Usuario`, `Fk_Servicio`, `Consulta`) VALUES ('$usuario', '$servicio', '$consulta')";   
-          $result = $conn->query($sql);
-          $conn->close();
-        }
-      }
+      }      
     ?>
 
     <?php include "Navigation.php" ?>
@@ -73,19 +58,20 @@
     <p><span class="error">* Espacio requerido</span></p>
 
     <h2>Cuéntanos cómo podemos ayudarte</h2><br>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
-      <input type="text" name="name" value="<?php echo $name;?>">
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
+        <input type="text" name="name" value="<?php echo $name;?>">
+        <br><br>
+        ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
+        <input type="text" name="email" value="<?php echo $email;?>">
+        <br><br>     
+        Comentario: <span class="error">* <?php echo $commentErr;?></span>
+        <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
+        <br><br>      
+        <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
+      </form>
       <br><br>
-      ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
-      <input type="text" name="email" value="<?php echo $email;?>">
-      <br><br>     
-      Comentario: <span class="error">* <?php echo $commentErr;?></span>
-      <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
-      <br><br>      
-      <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
-    </form>
-    <br><br> 
+    </div> 
 
   </body>
 </html>
