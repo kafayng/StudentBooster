@@ -48,8 +48,9 @@
     <table>
       <tra>
         <th>Servicio</th>
-        <th>Calificación</th>
-      </tr>
+        <th>Calificación Estudiante</th>
+        <th>Calificación Empresa</th>
+      </tra>
           <?php ConsigueHistorial('MMurillo') ?>
     </table>
   </div>

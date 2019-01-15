@@ -28,7 +28,7 @@ li a:hover:not(.active) {
 }
 
 .main {
-  /*background-color: #eae9e9;*/
+  background-color: #eae9e9;
   padding: 60px 0;
   position: relative; }
 
