@@ -56,9 +56,10 @@
 
     <div class="container">
     <p><span class="error">* Espacio requerido</span></p>
-
-    <h2>Cuéntanos cómo podemos ayudarte</h2><br>
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <div class="card">
+        <div class="card-header"> <h2>Cuéntanos cómo podemos ayudarte</h2></div>
+        <div class="card-body">
         ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
         <input type="text" name="name" value="<?php echo $name;?>">
         <br><br>
@@ -67,11 +68,14 @@
         <br><br>     
         Comentario: <span class="error">* <?php echo $commentErr;?></span>
         <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
-        <br><br>      
-        <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
+        <br><br> </div> 
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
+        </div>
+      </div>
       </form>
-      <br><br>
-    </div> 
+
+    </div>
 
   </body>
 </html>
