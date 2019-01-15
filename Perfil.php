@@ -18,12 +18,14 @@
 
 
   <div class="main">
+    <h1 align="center">Mi Perfil</h1>
     <div class="container bootstrap snippet">
 
       <div class="row">
 
         <div class="col-sm-3"><!--left col-->     
           <div class="text-center">
+            <br>
             <img src="Images/avatar.png" class="avatar img-circle img-thumbnail" alt="avatar">
           </div>   
         </div><!--/col-3-->
@@ -40,13 +42,16 @@
       </div><!--/col-9-->
     </div><!--/row-->
   </br>
+  <h1 align="center">Servicios realizados</h1><br>
+  <div class="container">
     <table>
-      <tr>
+      <tra>
         <th>Servicio</th>
         <th>Calificacion</th>
       </tr>
           <?php ConsigueHistorial('MMurillo') ?>
     </table>
+  </div>
   </div>
 </body>
 </html>
