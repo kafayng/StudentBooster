@@ -83,7 +83,7 @@
       Comentario: <span class="error">* <?php echo $commentErr;?></span>
       <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
       <br><br>      
-      <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+      <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
     </form>
     <br><br> 
 

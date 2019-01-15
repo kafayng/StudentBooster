@@ -6,9 +6,11 @@
   <title>Student Booster</title>
   <link rel="shortcut icon" href="images/logo.png" >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="CSS/style.css">
+  
   <link rel="stylesheet" href="CSS/default.css">
+  <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/layout.css">
+
 </head>
 
 <body>
@@ -39,12 +41,9 @@
             <a style="float:right" href="Registro.php">Registrarse</a>
           </div>
       </form>
-  </div>  
-
-
+  </div>
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
         <img src="Images/rusel1.png" style="width:100%;">
