@@ -102,22 +102,14 @@
 					INNER JOIN servicio	ON Servicio_ID = Servicio.ID WHERE Estudiante_Id_Usuario = '$ID_Usuario'";
 			$result = mysqli_query($conn, $query);
 			if($result->num_rows > 0){
+				$Codigo = "";
 				while($row = $result->fetch_assoc()){
-					if($row["Calificacion_Estudiante"] == null){
-						echo 
-							"<tr><td>" .$row["Nombre"] . "</td>
-							 <td>No hay calificación</td></tr>
-							 <td> <button type='submit' class='btn btn-primary btn-block'>Calificar empresa</button> </td>
-							 </tr>";
-					}else{						
-						echo 
-							"<tr>
-							<td>" .$row["Nombre"] . "</td>
-							<td>" .$row["Calificacion_Estudiante"] . "</td>
-							<td> <button type='submit' class='btn btn-primary btn-block'>Calificar empresa</button> </td>
-							</tr>";
-					}
+					$Codigo .= "<tr><td>" .$row["Nombre"] . "</td>";
+					$Codigo .= ($row["Calificacion_Estudiante"] == null) ? "<td>No hay calificación</td></tr>":"<td>" .$row["Calificacion_Estudiante"] . "</td>";
+					$Codigo .= ($row["Calificacion_Empresa"] == null) ? "<td> <button type='submit' class='btn btn-primary btn-block'>Calificar empresa</button> </td>":"<td>" .$row["Calificacion_Empresa"] . "</td>";
+					$Codigo .= "</tr>";					
 				}
+				echo $Codigo;
 			}
 		}
 		$conn->close();
