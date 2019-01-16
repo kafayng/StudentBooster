@@ -1,42 +1,4 @@
 <?php
-	function LogIn($usuario, $pwd){
-		require('db.php');
-		if(mysqli_connect_error()){
-			die("Connection failed: " . $conn->connect_error);
-		}else{
-			$result = ExisteUsuario($usuario, $pwd);
-			if($result == 0){
-				
-			}else{
-
-			}
-		}
-	}
-
-	function ExisteUsuario($usuario, $pwd){
-		require('db.php');
-		$result = 1;
-		if(mysqli_connect_error()){
-			die("Connection failed: " . $conn->connect_error);
-			return $result;
-		}else{
-			$query = "SELECT CASE WHEN EXISTS(SELECT 1 FROM estudiante) WHERE Nombre_Usuario = '$usuario' AND Contraseña = '$pwd')
-			THEN 0 ELSE 1 END";
-			$result = mysqli_query($conn, $query);
-			return $result;
-		}
-	}
-
-//0 = existe
-// SELECT CASE WHEN EXISTS (
-//     SELECT 1
-//     FROM estudiante
-//     WHERE Nombre_Usuario = 'Bryan1' AND Contraseña = 123
-// )
-// THEN 0
-// ELSE 1
-// END
-
 	function OptionCarreras(){
 		require('db.php');
 		if (mysqli_connect_error()){
@@ -55,11 +17,13 @@
 		$conn->close();
 	}
 	
-	function formPerfil($usuario){
+	function formPerfil(){
 		require('db.php');
 		if ($conn->connect_error){
 			die("Connection failed: " . $conn->connect_error);
 		}else{
+
+			$usuario = $_SESSION["user"];
 			$query = "SELECT * from estudiante where Nombre_Usuario = '$usuario'";
 			$result = mysqli_query($conn, $query);  
 			if($result->num_rows > 0){
@@ -72,7 +36,6 @@
 						id='Nombre' value=\"" .$row['Nombre'] . "\"disabled>
 						</div>
 						</div>";
-
 
 					echo
 						"<div class='form-group'>  
@@ -124,11 +87,12 @@
 		$conn->close();
 	}
 
-	function ConsigueHistorial($usuario){
+	function ConsigueHistorial(){
 		require('db.php');
 		if ($conn->connect_error){
 			die("Connection failed: " . $conn->connect_error);
 		}else{
+			$usuario = $_SESSION["user"];
 			$query = "SELECT ID_Usuario FROM estudiante WHERE Nombre_Usuario = '$usuario'";
 			$result = mysqli_query($conn, $query);
 			while($row = $result->fetch_assoc()){
@@ -142,7 +106,9 @@
 					if($row["Calificacion_Estudiante"] == null){
 						echo 
 							"<tr><td>" .$row["Nombre"] . "</td>
-							 <td>No hay calificación</td></tr>";
+							 <td>No hay calificación</td></tr>
+							 <td> <button type='submit' class='btn btn-primary btn-block'>Calificar empresa</button> </td>
+							 </tr>";
 					}else{						
 						echo 
 							"<tr>
@@ -186,12 +152,21 @@
 		$insertQuery = "INSERT INTO estudiante(Carrera_ID, Nombre, Nombre_Usuario, Carnet, Telefono, Email, Descripcion, Contraseña) 
 			VALUES('$IDcarrera', '$nombre', '$usuario', '$carnet', '$telefono', '$email', '$descripcion', '$pwd')";
 		if(mysqli_query($conn, $insertQuery)){
-    		echo "Se agregó el estudiante";
+    		include("index.php");
     	}else{
     		echo "Error" .mysqli_error($conn);
     	}
     	$conn->close();
 	}
+	}
+
+
+	if(isset($_POST['Usuario'])){
+		if(isset($_POST['pwd'])){
+			$usuario = filter_input(INPUT_POST, 'Usuario');
+			$pwd = filter_input(INPUT_POST, 'pwd');	
+			LogIn($usuario, $pwd);
+		}
 	}
 
 

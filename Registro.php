@@ -11,6 +11,7 @@
     <?php include 'main.php';?>
     <?php include 'Navigation.php';?>
     <?php include "imports.php" ?>
+    <?php include "Login.php"?>
 	<div class="container">
         <div class="card">
             <form action="main.php" method="POST" class="form-Registro">

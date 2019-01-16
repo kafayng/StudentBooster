@@ -1,3 +1,41 @@
+  <?php require("session.php");?>
+<?php
+  function LogIn($usuario, $pwd){
+    require('db.php');
+    if(mysqli_connect_error()){
+      die("Connection failed: " . $conn->connect_error);
+    }else{
+      $result = ExisteUsuario($usuario, $pwd);
+      if($result == 0){
+        $_SESSION["user"] = $usuario;
+      }
+    }
+    $conn->close();
+  }
+
+  function ExisteUsuario($usuario, $pwd){
+    require('db.php');
+    $result = 1;
+    if(mysqli_connect_error()){
+      die("Connection failed: " . $conn->connect_error);
+      return $result;
+    }else{
+      $query = "SELECT CASE WHEN EXISTS(SELECT 1 FROM estudiante) WHERE Nombre_Usuario = '$usuario' AND Contraseña = '$pwd')
+      THEN 0 ELSE 1 END";
+      $result = mysqli_query($conn, $query);
+      $conn->close();
+      return $result;
+    }
+  }
+
+  if(isset($_POST['Usuario'])){
+    if(isset($_POST['pwd'])){
+      $usuario = filter_input(INPUT_POST, 'Usuario');
+      $pwd = filter_input(INPUT_POST, 'pwd'); 
+      LogIn($usuario, $pwd);
+    }
+  } 
+  ?>
 <!DOCTYPE html>
 <html>
 <head>   
@@ -13,29 +51,12 @@
 </head>
 
 <body>
+
+<!-- ?php $_SESSION = Array();
+ session_destroy() ? -->
+
   <?php include "Navigation.php" ?>
-
-  <div id="LoginForm" class="modal">
-      <form class="modal-content" action="/action_page.php">
-          <div class="imgcontainer">
-              <span onclick="document.getElementById('LoginForm').style.display='none'" class="close" title="Close Modal">&times;</span>
-              </span>
-              <img src="Images/avatar.png" alt="Avatar" class="img-avatar">
-          </div>
-          <div class="container-Login">
-            <label for="Usuario"><b>Usuario</b></label>
-            <input type="text" placeholder="usuario" name="Usuario" required>
-            <labe for "pwd"><b>Contraseña</b></labe>
-            <input type="password" placeholder="*******" name="pwd" required>
-            <button class="button-Login" type="submit">Iniciar Sesión</button>
-          </div>
-          <div class="container-Login" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('LoginForm').style.display='none'" class="btnSalir">Salir</button>
-            <a style="float:right" href="Registro.php">Registrarse</a>
-          </div>
-      </form>
-  </div>
-
+  <?php include "Login.php"?>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="item active">
@@ -181,4 +202,5 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

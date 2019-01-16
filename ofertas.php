@@ -9,9 +9,12 @@
   <link rel="shortcut icon" href="Images/logo.png" >
   <link rel="stylesheet" href="CSS/style.css">
   <?php include "getOfertas.php"; ?>
-
+  <?php include "main.php" ?>
   </head>
   <body  onload="filter(0)">
+    <?php require("session.php");?>
+
+    <?php include "Login.php"?>
     <?php include "Navigation.php"; ?>
 
     <br><h1 align="center">Oferta de Servicios Disponibles</h1><br>

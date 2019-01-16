@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <?php require("session.php");?>
+
     <?php
       // define variables and set to empty values    
       $name = $email = $comment = "";

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -9,14 +10,13 @@
   <link rel="stylesheet" href="CSS/style.css">
   <?php include "imports.php" ?>
   <?php include 'main.php';?>
-
-
 </head>
 
 <body>
+  <?php require("session.php");?>
+
+  <?php include "Login.php"?>
   <?php include 'Navigation.php';?>
-
-
   <div class="main">
     <h1 align="center">Mi Perfil</h1>
     <div class="container bootstrap snippet">
@@ -34,7 +34,7 @@
           <div class="tab-content">
             
               <form class="form" action="##" method="post" id="registrationForm">   
-                <?php formPerfil('MMurillo') ?>
+                <?php formPerfil() ?>
               </form>              
           </div><!--/tab-pane-->
         </div><!--/tab-content-->
@@ -51,7 +51,7 @@
         <th>Calificación Estudiante</th>
         <th>Calificación Empresa</th>
       </tra>
-          <?php ConsigueHistorial('MMurillo') ?>
+          <?php ConsigueHistorial() ?>
     </table>
   </div>
   </div>
