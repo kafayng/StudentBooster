@@ -10,11 +10,12 @@
 <body>
     <?php include 'main.php';?>
     <?php include 'Navigation.php';?>
-	<div class="main">
-        <div class="container">
+    <?php include "imports.php" ?>
+	<div class="container">
+        <div class="card">
             <form action="main.php" method="POST" class="form-Registro">
-                <h2>Formulario de registro</h2>
-                <div class="form-group-1">
+                <div class="card-header"> <h2>Formulario de registro</h2></div>
+                <div class="card-body">
                     <label class="label-Registro" for="Nombre">Nombre completo:</label>
                     <input class="input-Registro" type="text" name="Nombre" id="Nombre" required />
                     <label class="label-Registro" for="Usuario">Usuario:</label>
@@ -24,7 +25,7 @@
                     <label class="label-Registro" for="Numero">Número de teléfono</label>
                     <input class="input-Registro"type="text" name="Numero" id="Numero"  required />
                     <label class="label-Registro" for="email">Email:</label>
-                    <input class="input-Registro"type="email" name="Email" id="Email" required />
+                    <input class="input-Registro"type="text" name="Email" id="Email" required />
                     <label class="label-Registro" for="Descripcion">Descripción</label>
                     <input class="input-Registro"type="text" name="Descripcion" id="Descripcion" required />
                     <label class="label-Registro" for="pwd">Contraseña:</label>
@@ -36,8 +37,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-submit">
-                    <input type="submit" name="submit" class="submit" value="Registrarse" />
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                 </div>
             </form>
         </div>
