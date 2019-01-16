@@ -134,7 +134,7 @@
 			while($row = $result->fetch_assoc()){
 				$ID_Usuario = (int)$row["ID_Usuario"];
 			}
-			$query = "SELECT Servicio.Nombre, Calificacion_Estudiante FROM trabajoxusuario
+			$query = "SELECT Servicio.Nombre, Calificacion_Estudiante, Calificacion_Empresa FROM trabajoxusuario
 					INNER JOIN servicio	ON Servicio_ID = Servicio.ID WHERE Estudiante_Id_Usuario = '$ID_Usuario'";
 			$result = mysqli_query($conn, $query);
 			if($result->num_rows > 0){
@@ -145,8 +145,11 @@
 							 <td>No hay calificación</td></tr>";
 					}else{						
 						echo 
-							"<tr><td>" .$row["Nombre"] . "</td>
-							 <td>" .$row["Calificacion_Estudiante"] . "</td></tr>";
+							"<tr>
+							<td>" .$row["Nombre"] . "</td>
+							<td>" .$row["Calificacion_Estudiante"] . "</td>
+							<td> <button type='submit' class='btn btn-primary btn-block'>Calificar empresa</button> </td>
+							</tr>";
 					}
 				}
 			}

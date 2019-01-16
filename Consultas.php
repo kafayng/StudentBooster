@@ -54,21 +54,21 @@
 
     <?php include "Navigation.php" ?>
 
-    <div class="container">
-    <p><span class="error">* Espacio requerido</span></p>
+    <div class="container">    
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <div class="card">
         <div class="card-header"> <h2>Cuéntanos cómo podemos ayudarte</h2></div>
         <div class="card-body">
-        ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
-        <input type="text" name="name" value="<?php echo $name;?>">
-        <br><br>
-        ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
-        <input type="text" name="email" value="<?php echo $email;?>">
-        <br><br>     
-        Comentario: <span class="error">* <?php echo $commentErr;?></span>
-        <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
-        <br><br> </div> 
+          <p><span class="error">* Espacio requerido</span></p>
+          ID de Usuario: <span class="error">* <?php echo $nameErr;?></span>
+          <input type="text" name="name" value="<?php echo $name;?>">
+          <br><br>
+          ID de Servicio: <span class="error">* <?php echo $emailErr;?></span>
+          <input type="text" name="email" value="<?php echo $email;?>">
+          <br><br>     
+          Comentario: <span class="error">* <?php echo $commentErr;?></span>
+          <textarea name="comment" class="form-control" rows="5"><?php echo $comment;?></textarea>
+        </div> 
         <div class="card-footer">
           <button type="submit" class="btn btn-primary btn-block">Enviar tu consulta o comentario</button>
         </div>
